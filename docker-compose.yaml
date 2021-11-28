@@ -1,0 +1,20 @@
+version: '3.2'
+
+services:
+  cas:
+    container_name: cas
+    restart: always
+    image: bulyginevgeny/cas_backend:${CAS_IMAGE_TAG}
+    environment:
+      BASE_ADDRESS: '${BASE_ADDRESS}'
+    ports:
+      - 80:8000
+
+  acs:
+    container_name: acs
+    restart: always
+    image: bulyginevgeny/acs:${ACS_IMAGE_TAG}
+    environment:
+      BASE_ADDRESS: '${BASE_ADDRESS}'
+    ports:
+      - 81:8000
