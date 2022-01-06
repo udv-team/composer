@@ -9,6 +9,8 @@ services:
       BASE_ADDRESS: '${BASE_ADDRESS}'
     ports:
       - 80:8000
+    networks:
+      - my_network
 
   acs:
     container_name: acs
@@ -17,4 +19,10 @@ services:
     environment:
       BASE_ADDRESS: '${BASE_ADDRESS}'
     ports:
-      - 81:8000
+      - 81:8001
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge
