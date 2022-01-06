@@ -18,6 +18,7 @@ services:
     image: bulyginevgeny/acs:${ACS_IMAGE_TAG}
     environment:
       BASE_ADDRESS: '${BASE_ADDRESS}'
+      ACS_PORT: '${ACS_PORT}'
     ports:
       - 81:8001
     networks:
